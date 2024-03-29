@@ -14,7 +14,6 @@
   },
   "scripts": {
     "start": "node server.js"
-  },
-  "main": "src/server.js"
+  }
 
 }
