@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
-const db = require('../database');
+const sequelize = require('../database');
 const Organization = require('./organizationModel');
 const Item = require('./itemModel');
 
-const Pricing = db.define('Pricing', {
+const Pricing = sequelize.define('Pricing', {
   organization_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -32,17 +32,19 @@ const Pricing = db.define('Pricing', {
     }
   },
   km_price: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
     validate: {
-      min: 0.01 // Minimum price per km allowed
+        notNull: true,
+        isDecimal: true,
+        min: 0
     }
   },
   fix_price: {
-    type: DataTypes.FLOAT,
+    type: DataTypes.INTEGER,
     allowNull: false,
     validate: {
-      min: 0.01 // Minimum fixed price allowed
+      min: 1 // Minimum fixed price allowed
     }
   }
 });
