@@ -4,9 +4,9 @@ const sequelize = new Sequelize({
   dialect: 'postgres',  
   host: 'localhost',    // Database host
   port: 5432,           // Database port
-  username: 'santhanam', // Database username
-  password: '12345678', // Database password
-  database: 'Fooddeliveryapp-Santhanam', // Database name
+  username:"postgres", // Database username
+  password: "12345678", // Database password
+  database: "Fooddeliveryapp-Santhanam", // Database name
 });
 
 
