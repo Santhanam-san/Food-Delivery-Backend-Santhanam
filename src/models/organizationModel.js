@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../database');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../database')
 
 const Organization = sequelize.define('Organization', {
   id: {
@@ -12,5 +12,11 @@ const Organization = sequelize.define('Organization', {
     allowNull: false
   }
 });
-
+sequelize.sync({ force: true }) // Sync all defined models to the database
+  .then(() => {
+    console.log('Tables synced successfully');
+  })
+  .catch(err => {
+    console.error('Error syncing tables:', err);
+  })
 module.exports = Organization;

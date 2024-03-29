@@ -4,9 +4,9 @@ const sequelize = new Sequelize({
   dialect: 'postgres',  
   host: 'localhost',    // Database host
   port: 5432,           // Database port
-  username:"postgres", // Database username
+  username:"santhanam", // Database username
   password: "12345678", // Database password
-  database: "Fooddeliveryapp-Santhanam", // Database name
+  database: "FoodDeliverybackend-Santhanam", // Database name
 });
 
 
@@ -20,4 +20,4 @@ async function testDatabaseConnection() {
 }
 
 
-module.exports = { sequelize, testDatabaseConnection };
+module.exports = sequelize;
