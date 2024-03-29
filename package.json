@@ -14,6 +14,19 @@
   },
   "scripts": {
     "start": "node src/server.js"
-  }
-
+  },
+  "name": "food-delivery-backend",
+  "version": "1.0.0",
+  "description": "vigaet assignment",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santhanam-san/Food-Delivery-Backend-Santhanam.git"
+  },
+  "author": "Santhana Gopala Krishnan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santhanam-san/Food-Delivery-Backend-Santhanam/issues"
+  },
+  "homepage": "https://github.com/Santhanam-san/Food-Delivery-Backend-Santhanam#readme"
 }
