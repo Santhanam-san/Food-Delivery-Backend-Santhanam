@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Food Delivery API",
+    "description": "API for managing food delivery operations",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/pricing": {
+      "post": {
+        "summary": "Calculate price for delivery",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PricingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PricingResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Organization": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": ["name", "id"]
+      },
+      "Item": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": ["type", "id"]
+      },
+      "PricingRequest": {
+        "type": "object",
+        "properties": {
+          "zone": {
+            "type": "string"
+          },
+          "organization_id": {
+            "type": "integer"
+          },
+          "total_distance": {
+            "type": "integer"
+          },
+          "item_type": {
+            "type": "string"
+          }
+        },
+        "required": ["zone", "organization_id", "total_distance", "item_type"]
+      },
+      "PricingResponse": {
+        "type": "object",
+        "properties": {
+          "total_price": {
+            "type": "number"
+          }
+        },
+        "required": ["total_price"]
+      }
+    }
+  }
+}
