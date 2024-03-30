@@ -14,7 +14,7 @@ app.use(express.json());
 // Routes
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument)); // Serve Swagger UI
 
-app.use('/pricing', pricingRouter);
+app.use('/', pricingRouter);
 
 // Database synchronization
 db.sync()
