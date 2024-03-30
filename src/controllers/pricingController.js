@@ -7,6 +7,6 @@ exports.calculatedPrice = async (req, res) => {
     res.json({ total_price: totalPrice });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(400).json({ error: 'Bad Request' });
   }
 };

@@ -16,7 +16,7 @@ exports.calculatePrice = async (zone, organization_id, totalDistance, item_type)
     if (!pricingDetails) {
       throw new Error('Pricing details not found');
     }
-console.log(pricingDetails)
+// console.log(pricingDetails)
     // Fetch item details from the database based on item ID
     // const itemDetails = await Item.findByPk(itemId);
 
