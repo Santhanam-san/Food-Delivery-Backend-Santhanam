@@ -1,6 +1,6 @@
 const pricingService = require('../services/pricingLogic');
 
-exports.calculatePrice = async (req, res) => {
+exports.calculatedPrice = async (req, res) => {
   try {
     const { zone, organization_id, total_distance, item_type } = req.body;
     const totalPrice = await pricingService.calculatePrice(zone, organization_id, total_distance, item_type);
